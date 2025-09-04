@@ -1,9 +1,48 @@
 body { 
-    font-family: Arial; text-align: center; 
+    background-image: url("./img/fondo1.jpeg");
+    background-repeat: no-repeat;  /* Evita que se repita */
+    background-size: cover;
+    display: flex;
+    justify-content: left;
+    margin-left: 10%;
+    margin-top: 5%;
 }
 
-#resultado { 
+#resultado {
+    display: flex;
     margin-top: 20px; 
+}
+
+
+#inicio{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(255, 255, 200, 0.7);
+}
+
+#pokemonInput{
+    text-align: center;
+    width:50%;
+    font-size: 14px;
+}
+
+#buscarBtn{
+    font-family: 'Press Start 2P', sans-serif;
+    font-size: 14px;
+    flex: none;
+    width: 30%;
+    margin: 20px;
+}
+
+h1{
+    
+    color: black;
+    font-family: 'Press Start 2P', sans-serif;
 }
 
 img { 
