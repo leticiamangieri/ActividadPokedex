@@ -36,9 +36,12 @@ body {
 h2{ 
     color: black;
     font-family: 'Press Start 2P', sans-serif;
+    text-align: center;
 }
 
-
+p{
+    text-align: center;
+}
 
 #inicio{
     display: flex;
@@ -77,6 +80,7 @@ h1{
     color: black;
     font-family: 'Press Start 2P', sans-serif;
 }
+
 
 /*Estilos para el carrusel*/
 #contenedor-carrusel{

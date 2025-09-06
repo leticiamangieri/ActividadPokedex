@@ -24,9 +24,15 @@ function Buscar(){
    console.log(data);
   imagenes= Object.values(data.sprites).filter(img => typeof img==="string"); /*Lo utilizo para quedarme solo con la url,evito los null*/
   divResultado.classList.remove("oculto");
-   divDatos.innerHTML=`<h2>${data.name}</h2>
-                            <p>Experiencia: ${data.base_experience}</p>
+  let habilidades = data.abilities.map(a => a.ability.name).join(', '); //Recorre el arreglo y se queda solo con el nombre de la habilidad,
+  let tipo = data.types.map(a => a.type.name).join(', ');               //.join une todas las respuestas en una cadena de texto separada por comas
+                                                                        //y se guarda en una variable.
+   divDatos.innerHTML=`<h2>${data.name}</h2>     
                             <p>ID: ${data.id}</p>
+                            <p>Experiencia: ${data.base_experience}</p>
+                            <p>Habilidades: ${habilidades}</p>
+                            <p>Tipo: ${tipo}</p>
+
                             `;
     cargarImagenes(imagenes);
     
