@@ -26,6 +26,7 @@ function Buscar(){
    console.log(data);
   imagenes= Object.values(data.sprites).filter(img => typeof img==="string"); /*Lo utilizo para quedarme solo con la url,evito los null*/
   divResultado.classList.remove("oculto");
+  btnVolver.classList.remove("oculto")
   divInicio.classList.add("ocultoResponsive"); //para ocultar cuando cambia a celular.
   let habilidades = data.abilities.map(a => a.ability.name).join(', '); //Recorre el arreglo y se queda solo con el nombre de la habilidad,
   let tipo = data.types.map(a => a.type.name).join(', ');               //.join une todas las respuestas en una cadena de texto separada por comas
@@ -38,6 +39,7 @@ function Buscar(){
 
                             `;
     cargarImagenes(imagenes);    
+   
 })
 .catch(error => {
 // divInicio.innerHTML = `<p style="color:red; font-family: 'Press Start 2P', sans-serif; font-size:12px">${error.message}</p>`;

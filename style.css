@@ -26,7 +26,7 @@ body {
     padding: 15px;
     border-radius: 5px;
     box-shadow: 0 0 20px rgba(255, 255, 200, 0.7);
-    width: 400px;
+    width: 420px;
     height: 70%;
 }
 
@@ -169,7 +169,6 @@ h1{
     background-color: white;
     overflow: hidden;  /*hace que solo se muestre lo que queda dentro de la ventana, por lo tanto las imagenes que sobresalen no se van a ver*/
 }
-
 
 #btnVolver{
   display: flex;
