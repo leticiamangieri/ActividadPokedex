@@ -10,6 +10,8 @@ const divInicioPrevError=divInicio.innerHTML; //Lo agrego para restaurar los ele
 
 let imagenes=[];
 function Buscar(){
+  console.log('Buscar fue ejecutada');
+  imagenes=[];
     let nombre=input.value.toLowerCase();//tomamos el valor escrito en el input cuando hace click 
     input.value=``;     
     fetch(`https://pokeapi.co/api/v2/pokemon/${nombre}`)               //toLowerCase() hace que no se distinga entre mayuscula y minuscula
@@ -38,11 +40,12 @@ function Buscar(){
     cargarImagenes(imagenes);    
 })
 .catch(error => {
- divInicio.innerHTML = `<p style="color:red; font-family: 'Press Start 2P', sans-serif; font-size:12px">${error.message}</p>`;
+// divInicio.innerHTML = `<p style="color:red; font-family: 'Press Start 2P', sans-serif; font-size:12px">${error.message}</p>`;
+alert(error.message);
 });
-setTimeout(() => {
-    divInicio.innerHTML= divInicioPrevError;   //Aparece nuevamente el buscador despues de mostrar el error
-  }, 2000);
+//setTimeout(() => {
+  //  divInicio.innerHTML= divInicioPrevError;   //Aparece nuevamente el buscador despues de mostrar el error
+ // }, 2000);
 
 };
 
@@ -116,7 +119,7 @@ function moverIzq(){
 
 function cargarImagenes(imagenes){
     divImg.innerHTML="";    /*Limpio el contenido anterior */
-    console.log("Imagenes recibidas:", imagenes);
+
     imagenes.forEach(src => {       /*Recorro el arreglo (imagenes) que tiene los src, el cual cree en script.js */
         if(src){                    /*src lo elijo como clave,podria ser cualquier cosa */
             let img=document.createElement("img");
