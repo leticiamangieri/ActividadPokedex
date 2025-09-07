@@ -1,6 +1,6 @@
 
 /*Evita que la imagen se achique al cambiar el tamaño de la ventana*/
-html{                   
+html,body{                   
     height:100%;
     margin: 0;
     padding: 0;
@@ -15,9 +15,6 @@ body {
     height: 100%;
 }
 
-.oculto{
-    display: none;
-}
 
 #resultado {
     display: flex;
@@ -64,6 +61,7 @@ p{
     font-size: 14px;
 }
 
+
 #buscarBtn{
     font-family: 'Press Start 2P', sans-serif;
     font-size: 14px;
@@ -79,8 +77,12 @@ p{
 h1{
     color: black;
     font-family: 'Press Start 2P', sans-serif;
+    text-align: center;
 }
 
+#btnVolver{
+    display: none;
+}
 
 /*Estilos para el carrusel*/
 #contenedor-carrusel{
@@ -101,7 +103,7 @@ h1{
 }
 
 
-#btn-der, #btn-izq {
+#btn-der, #btn-izq{
   position: absolute;
   color: black;
   background-color: transparent;
@@ -120,4 +122,68 @@ h1{
 
 #btn-der {
   right: 2px;      
+}
+
+
+
+
+/*RESPONSIVO*/
+
+@media only screen and (max-width: 800px) {  /*celulares*/
+   body {
+    flex-direction: column;
+    gap: 25px;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: 80% center;  /*Mueve la imagen 650 pixeles a izq sobre el eje x, y la centra en el eje y*/
+  }
+
+  #inicio{
+    margin-left:0;
+    width: 250px;
+    margin-top: 0;
+  }
+
+  .ocultoResponsive{
+    display: none !important;
+  }
+
+  #pokemonInput{
+    width: 75%;
+  }
+
+  #resultado {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(255, 255, 200, 0.7);
+    width: 50%;
+    height: 50%;
+}
+
+#contenedor-carrusel{
+    position: relative;
+    align-items: center;
+    width: 100px;      /*este contenedor tiene que tener el tamaño de la imagen que quiero mostrar,es como la ventana que queda fija*/
+    height: auto;
+    border-radius: 5px;
+    background-color: white;
+    overflow: hidden;  /*hace que solo se muestre lo que queda dentro de la ventana, por lo tanto las imagenes que sobresalen no se van a ver*/
+}
+
+
+#btnVolver{
+  display: flex;
+    color: black;
+  background-color: white;
+  font-family: 'Press Start 2P', sans-serif;
+  font-size: 12px;
+  cursor: pointer;                      /*El cursor cambia a una mano*/
+  border: none;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 20px rgba(255, 255, 200, 0.7);
+  
+}
+
 }

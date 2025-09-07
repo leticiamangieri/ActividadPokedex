@@ -4,8 +4,8 @@ let input=document.getElementById("pokemonInput");
 let divResultado=document.getElementById("resultado");
 let divInicio=document.getElementById("inicio");
 let divDatos=document.getElementById("datos");
-
-
+let btnVolver=document.getElementById("btnVolver")
+const divInicioPrevError=divInicio.innerHTML; //Lo agrego para restaurar los elementos de busqueda luego de mostrar el error,linea 45
 
 
 let imagenes=[];
@@ -16,7 +16,7 @@ function Buscar(){
     .then (response =>{
         console.log(response);
     if (!response.ok){
-        throw new Error('No encontrado,ingresa otro');
+        throw new Error('Pokemon no encontrado,ingresa otro');
     }
     return response.json();
 })
@@ -24,6 +24,7 @@ function Buscar(){
    console.log(data);
   imagenes= Object.values(data.sprites).filter(img => typeof img==="string"); /*Lo utilizo para quedarme solo con la url,evito los null*/
   divResultado.classList.remove("oculto");
+  divInicio.classList.add("ocultoResponsive"); //para ocultar cuando cambia a celular.
   let habilidades = data.abilities.map(a => a.ability.name).join(', '); //Recorre el arreglo y se queda solo con el nombre de la habilidad,
   let tipo = data.types.map(a => a.type.name).join(', ');               //.join une todas las respuestas en una cadena de texto separada por comas
                                                                         //y se guarda en una variable.
@@ -34,12 +35,14 @@ function Buscar(){
                             <p>Tipo: ${tipo}</p>
 
                             `;
-    cargarImagenes(imagenes);
-    
+    cargarImagenes(imagenes);    
 })
 .catch(error => {
- divResultado.innerHTML = `<p style="color:red;">${error.message}</p>`;
+ divInicio.innerHTML = `<p style="color:red; font-family: 'Press Start 2P', sans-serif; font-size:12px">${error.message}</p>`;
 });
+setTimeout(() => {
+    divInicio.innerHTML= divInicioPrevError;   //Aparece nuevamente el buscador despues de mostrar el error
+  }, 2000);
 
 };
 
@@ -50,6 +53,14 @@ input.addEventListener('keydown', function(event) {
   }
 }); 
 
+
+//Botón de volver al buscador
+
+btnVolver.addEventListener("click",function(){
+  divResultado.classList.add("oculto");
+  btnVolver.classList.add("oculto");
+  divInicio.classList.remove("ocultoResponsive");
+})
 
 
 //CARRUSEL DE IMAGENES
