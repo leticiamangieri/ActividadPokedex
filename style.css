@@ -1,0 +1,227 @@
+
+/*Evita que la imagen se achique al cambiar el tamaño de la ventana*/
+html,body{                   
+    height:100%;
+    margin: 0;
+    padding: 0;
+}
+
+body { 
+    background-image: url("img/fondo1.jpeg");
+    background-repeat: no-repeat;  
+    background-size: cover;
+    display: flex;
+    height: 100%;
+}
+
+
+#resultado {
+    display: flex;
+    position: relative;  /*Lo agrego para poder poner la imagen de fav,y poder posicionarla abajo a la derecha*/
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(255, 255, 200, 0.7);
+    width: 420px;
+    height: 70%;
+    margin-left: 20%;
+}
+
+h2{ 
+    color: black;
+    font-family: 'Press Start 2P', sans-serif;
+    text-align: center;
+}
+
+p{
+    text-align: center;
+}
+
+#inicio{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+    margin-left: 10%;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(255, 255, 200, 0.7);
+    width: 400px;
+    height: 20%;
+}
+
+#pokemonInput{
+    text-align: center;
+    width:50%;
+    font-size: 14px;
+}
+
+
+#buscarBtn{
+    font-family: 'Press Start 2P', sans-serif;
+    font-size: 14px;
+    flex: none;
+    width: auto;
+    margin: 20px;
+}
+
+.oculto{
+    display: none !important;
+}
+
+h1{
+    color: black;
+    font-family: 'Press Start 2P', sans-serif;
+    text-align: center;
+}
+
+#btnVolver{
+    display: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+/*Header*/
+
+header{
+  display: flex;
+  align-items: center;
+  height: 30px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px;
+}
+
+#iconFav{
+  width: 30px;
+}
+
+.elemHeader{
+  font-size: 12px;
+  color: white;
+  font-family: 'Press Start 2P', sans-serif;
+  padding: 5px; 
+}
+
+
+/*Estilos para el carrusel*/
+
+#contenedor-carrusel{
+    position: relative;
+    width: 155px;      /*este contenedor tiene que tener el tamaño de la imagen que quiero mostrar,es como la ventana que queda fija*/
+    height: 150px;
+    border-radius: 5px;
+    background-color: white;
+    overflow: hidden;  /*hace que solo se muestre lo que queda dentro de la ventana, por lo tanto las imagenes que sobresalen no se van a ver*/
+}
+
+
+#carrusel-img{      /*contenedor que tiene todas las imagenes y se va moviendo*/
+    display: flex;
+    justify-content: center;
+    width: calc(100% * 4);
+    height: 100%;
+}
+
+
+#btn-der, #btn-izq{
+  position: absolute;
+  color: black;
+  background-color: transparent;
+  font-family: 'Press Start 2P', sans-serif;
+  font-size: 12px;
+  cursor: pointer;                      /*El cursor cambia a una mano*/
+  border: none;
+  top: 50%;                      /* Para centrar verticalmente */
+  transform: translateY(-50%);  /* Ajusta para que quede bien centrado verticalmente,combinado con position:absolute y top=50% */
+  z-index: 10;                  /* Para que estén por encima de las imágenes */
+}
+
+#btn-izq {
+  left: 2px;         /* Separado 2px del borde izquierdo */
+}
+
+#btn-der {
+  right: 2px;      
+}
+
+
+/*RESPONSIVO*/
+
+@media only screen and (max-width: 800px) {  /*celulares*/
+   body {
+    flex-direction: column;
+    gap: 25px;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: 80% center;  /*Mueve la imagen 650 pixeles a izq sobre el eje x, y la centra en el eje y*/
+  }
+
+  #inicio{
+    margin-left:0;
+    width: 250px;
+    margin-top: 0;
+  }
+
+  .ocultoResponsive{
+    display: none !important;
+  }
+
+  #pokemonInput{
+    width: 75%;
+  }
+
+  #resultado {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(255, 255, 200, 0.7);
+    width: 50%;
+    height: 50%;
+    margin-left: 0;
+}
+
+#contenedor-carrusel{
+    position: relative;
+    align-items: center;
+    width: 100px;      /*este contenedor tiene que tener el tamaño de la imagen que quiero mostrar,es como la ventana que queda fija*/
+    height: auto;
+    border-radius: 5px;
+    background-color: white;
+    overflow: hidden;  /*hace que solo se muestre lo que queda dentro de la ventana, por lo tanto las imagenes que sobresalen no se van a ver*/
+}
+
+#btnVolver{
+  display: flex;
+  color: black;
+  background-color: white;
+  font-family: 'Press Start 2P', sans-serif;
+  font-size: 12px;
+  cursor: pointer;                      /*El cursor cambia a una mano*/
+  border: none;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 20px rgba(255, 255, 200, 0.7);
+  
+}
+
+}
+
+/*Estilo para estrella de favoritos*/
+
+#agregarFav{
+  width: 10%;
+  position: absolute;
+  bottom: 10px;  
+  right: 10px;   
+  cursor: pointer;
+}

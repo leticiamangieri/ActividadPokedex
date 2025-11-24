@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mini Pokedex</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet"> <!--Iconos-->
+    <link rel="icon" type="image/x-icon" href="img/favicon.png">
+</head>
+<body>
+    <header >
+        <img src="/img/fav-activo.png" alt="favoritos" id="iconFav">
+        <a id="listaFav" class="elemHeader" href="favoritos.html">Favoritos</a>
+    </header>
+    <div id="inicio">
+        <h1>Mini Pokedex</h1>
+        <input type="text" id="pokemonInput"  placeholder="Busca por nombre o número">
+        <button id="buscarBtn">Buscar</button>
+    </div>
+
+    <div id="resultado" class="oculto">
+        <div id="datos"></div>
+        <div id="contenedor-carrusel">
+            <div id="carrusel-img"></div>
+            <button id="btn-der">></button>
+            <button id="btn-izq"><</button>
+        </div>
+        <img class="favNo" id="agregarFav" src="/img/fav-no.png" alt="agregar a favoritos">
+    </div>
+    <button id="btnVolver" class="oculto">Volver al buscador</button>
+    <script src="js/carrusel.js"></script>
+    <script src="js/favoritos.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

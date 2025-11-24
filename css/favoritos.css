@@ -1,0 +1,96 @@
+
+html,body{                   
+    height:100%;
+    margin: 0;
+    padding: 0;
+}
+
+
+body { 
+    background-image: url("/img/fondo3.jpg");
+    background-repeat: no-repeat;  
+     background-attachment: fixed;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+}
+
+
+#titulo{
+    color: black;
+    font-family: 'Press Start 2P', sans-serif;
+    margin-left: 10%;
+    margin-top: 5%;
+}
+
+nav{
+    top: 0;
+    left: 0;
+    padding: 10px;
+}
+
+nav a{
+    text-decoration: none;
+    color: black;
+    font-size: 15px;
+    font-family: 'Press Start 2P', sans-serif;
+}
+
+#contenedor-fav{
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(255, 255, 200, 0.7);
+}
+
+.resultado {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 4px 10px rgba(132, 131, 129, 0.7);
+    height: 250px;
+
+}
+h5{ 
+    color: black;
+    font-family: 'Press Start 2P', sans-serif;
+    text-align: center;
+    padding: 15px;
+}
+
+
+p{
+    text-align: center;
+}
+
+.quitarFav{
+    position: absolute;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    font-size: 30px;
+}
+
+.tarjetaFav{
+    height: auto;
+}
+
+@media only screen and (max-width: 800px) {  /*celulares*/
+
+body{
+    flex-direction: column;
+    gap: 25px;
+    background-size: cover;
+    background-position: 50% center; 
+}
+
+#titulo{
+    margin-left: 40px;
+    margin-top: 10%;
+    font-size: 5px;
+}
+
+
+
+}
