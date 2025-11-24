@@ -1,15 +1,14 @@
-
-
-
-document.addEventListener("DOMContentLoaded", () => {
 let contenedorFav=document.getElementById("contenedor-fav");
   
+document.addEventListener("DOMContentLoaded", () => {
+
 let favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
+console.log(favoritos);
   if (favoritos.length === 0) {
     contenedorFav.innerHTML = `<p>Aún no hay favoritos</p>`;
   } else {
     favoritos.forEach(nombre => {
-        let habilidades = nombre.abilities.map(a => a.ability.name).join(', '); //Recorre el arreglo y se queda solo con el nombre de la habilidad,
+        let habilidades = (nombre.abilities || []).map(a => a.ability.name).join(', '); //Recorre el arreglo y se queda solo con el nombre de la habilidad,
         let tipo = nombre.types.map(a => a.type.name).join(', ');               //.join une todas las respuestas en una cadena de texto separada por comas
                                                                         //y se guarda en una variable.}
     let div = document.createElement("div");
