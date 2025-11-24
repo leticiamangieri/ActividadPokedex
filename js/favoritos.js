@@ -1,6 +1,7 @@
-let contenedorFav=document.getElementById("contenedor-fav");
+
   
 document.addEventListener("DOMContentLoaded", () => {
+let contenedorFav=document.getElementById("contenedor-fav");.
 
 let favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
 console.log(favoritos);

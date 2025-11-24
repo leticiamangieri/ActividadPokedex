@@ -74,13 +74,13 @@ agregarFav.dataset.id=pokemonActual.id;
 favoritos = JSON.parse(localStorage.getItem("favoritos")) || []; //Recupera el array de favoritos guardado en localStorage, o un array vacío si no existe.
 if (!pokemonActual) return;
 if (agregarFav.classList.contains("favNo")){       /*Si no esta en favorito lo agrega,y viceversa*/
-        agregarFav.src="/img/fav-activo.png";
+        agregarFav.src="img/fav-activo.png";
         agregarFav.className=("favSi");
         favoritos.push(pokemonActual);
         localStorage.setItem("favoritos", JSON.stringify(favoritos)); //guarda la lista actualizada
         
 }else{
-      agregarFav.src="/img/fav-no.png"
+      agregarFav.src="img/fav-no.png"
       agregarFav.className=("favNo");
       favoritos =favoritos.filter(p => p.id !== pokemonActual.id);    //Filtro para eliminar el Pokémon con ese id
       localStorage.setItem("favoritos", JSON.stringify(favoritos)); //Guardo el array actualizado
@@ -92,10 +92,10 @@ function restaurarFavoritos() {
   
   if (favoritos.some(prod => prod.id === pokemonActual.id)) {
     agregarFav.className = "favSi";
-     agregarFav.src="/img/fav-activo.png";
+     agregarFav.src="img/fav-activo.png";
   } else {
     agregarFav.className = "favNo";
-    agregarFav.src="/img/fav-no.png"
+    agregarFav.src="img/fav-no.png"
   }
 }
 
