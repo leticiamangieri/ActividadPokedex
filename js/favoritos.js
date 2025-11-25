@@ -1,10 +1,8 @@
-
-  
 document.addEventListener("DOMContentLoaded", () => {
 let contenedorFav=document.getElementById("contenedor-fav");
 
 let pokemonesFavoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
-console.log(favoritos);
+console.log(pokemonesFavoritos);
   if (pokemonesFavoritos.length === 0) {
     contenedorFav.innerHTML = `<p>Aún no hay favoritos</p>`;
   } else {
@@ -24,12 +22,8 @@ console.log(favoritos);
                       ;
 contenedorFav.appendChild(div);
 
-    });
-  }
-});
-
-let btnQuitarFav=document.getElementsByClassName("quitarFav");
 contenedorFav.addEventListener("click", function (e) {
+
   const boton = e.target.closest(".quitarFav");
   if (boton) {
     const nombre = boton.getAttribute("data-name");
@@ -48,3 +42,11 @@ contenedorFav.addEventListener("click", function (e) {
   }
   }})
 ;
+
+
+    });
+  }
+
+});
+
+
